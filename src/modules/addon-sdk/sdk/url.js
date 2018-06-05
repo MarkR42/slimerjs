@@ -128,15 +128,15 @@ function URL(url, base) {
 
   Object.defineProperties(this, {
     toString: {
-      value: function URL_toString() new String(uri.spec).toString(),
+      value: function URL_toString() { return new String(uri.spec).toString() },
       enumerable: false
     },
     valueOf: {
-      value: function() new String(uri.spec).valueOf(),
+      value: function() { return new String(uri.spec).valueOf() },
       enumerable: false
     },
     toSource: {
-      value: function() new String(uri.spec).toSource(),
+      value: function() { return new String(uri.spec).toSource() },
       enumerable: false
     }
   });
