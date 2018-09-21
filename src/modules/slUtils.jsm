@@ -177,7 +177,9 @@ slUtils.readSyncStringFromFile = function readSyncStringFromFile (file) {
 }
 
 slUtils.readChromeFile = function readChromeFile(url) {
-    let channel = ioService.newChannel(url,null,null);
+    let channel = ioService.newChannel2(url,null,null,null,
+        Services.scriptSecurityManager.getSystemPrincipal(),
+                null, null, null);
     let input = channel.open();
 
     scriptableStream.init(input);
