@@ -116,7 +116,7 @@ function _create(parentWebpageInfo) {
      * It observes console events.
      */
     var webpageObserver = {
-        QueryInterface: XPCOMUtils.generateQI([Ci.nsISupportsWeakReference,Ci.nsIObserver]),
+        QueryInterface: ChromeUtils.generateQI([Ci.nsISupportsWeakReference,Ci.nsIObserver]),
 
         observe: function webpageobserver_observe(aSubject, aTopic, aData) {
             if (aTopic == "console-api-log-event") {

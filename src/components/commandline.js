@@ -168,7 +168,7 @@ slCommandLine.prototype = {
 
     classID: Components.ID("{00995ba2-223f-4efb-b656-ce98aff7019b}"),
     classDescription: "Command line handler for SlimerJS",
-    QueryInterface: XPCOMUtils.generateQI([Components.interfaces.nsICommandLineHandler]),
+    QueryInterface: ChromeUtils.generateQI([Components.interfaces.nsICommandLineHandler]),
 
     /**
      * known script handlers

@@ -23,7 +23,7 @@ function Navigation() {
 Navigation.prototype = {
     classID          : Components.ID("{5a5f9d66-53b5-4541-8225-cae868541bc2}"),
     classDescription: "Navigation manager for SlimerJS",
-    QueryInterface   : XPCOMUtils.generateQI([Ci.nsIContentPolicy]),
+    QueryInterface   : ChromeUtils.generateQI([Ci.nsIContentPolicy]),
 
     // short shouldLoad(in unsigned long aContentType, in nsIURI aContentLocation,
     //                  in nsIURI aRequestOrigin, in nsISupports aContext,

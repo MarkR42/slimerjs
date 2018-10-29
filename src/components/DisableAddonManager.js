@@ -22,7 +22,7 @@ function DisabledAddonManager() {}
 
 DisabledAddonManager.prototype = {
     classID: Components.ID('{ed6e7c79-fcd3-4285-881e-f0cbb0d8ada0}'),
-    QueryInterface: XPCOMUtils.generateQI([Ci.nsIObserver, Ci.nsITimerCallback]),
+    QueryInterface: ChromeUtils.generateQI([Ci.nsIObserver, Ci.nsITimerCallback]),
     _xpcom_factory: XPCOMUtils.generateSingletonFactory(DisabledAddonManager),
 
     observe(subject, topic, data) {},

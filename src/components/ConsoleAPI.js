@@ -44,7 +44,7 @@ ConsoleAPI.prototype = {
 
   classID: Components.ID("{fe06cc0a-53d5-4004-a5af-c23b4d2e327d}"),
 
-  QueryInterface: XPCOMUtils.generateQI([Ci.nsIDOMGlobalPropertyInitializer,
+  QueryInterface: ChromeUtils.generateQI([Ci.nsIDOMGlobalPropertyInitializer,
                                          Ci.nsISupportsWeakReference,
                                          Ci.nsIObserver]),
 

@@ -39,7 +39,7 @@ SiteSpecificUserAgent.prototype = {
   },
 
   classID: Components.ID("{7602b9c0-6413-4769-893b-271245785445}"),
-  QueryInterface: XPCOMUtils.generateQI([Ci.nsISiteSpecificUserAgent])
+  QueryInterface: ChromeUtils.generateQI([Ci.nsISiteSpecificUserAgent])
 };
 
 this.NSGetFactory = XPCOMUtils.generateNSGetFactory([SiteSpecificUserAgent]);

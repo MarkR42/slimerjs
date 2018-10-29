@@ -35,7 +35,7 @@ function filePicker() {
 filePicker.prototype = {
     classID          : Components.ID("{4d447d76-5205-4685-9237-9a35c7349adf}"),
     classDescription: "file picker for SlimerJS",
-    QueryInterface   : XPCOMUtils.generateQI([Ci.nsIFilePicker]),
+    QueryInterface   : ChromeUtils.generateQI([Ci.nsIFilePicker]),
 
     _filterFiles : function(list) {
         let finalList = []

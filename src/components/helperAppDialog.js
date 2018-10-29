@@ -87,7 +87,7 @@ unknownContentTypeDialog.prototype = {
     classDescription: 'Unknown Content Type Dialog placeholder',
     classID: Components.ID("{04c5992d-c6a5-4138-9b75-b03ead2be0f1}"),
     contractID: '@mozilla.org/helperapplauncherdialog;1',
-    QueryInterface : XPCOMUtils.generateQI([Ci.nsIHelperAppLauncherDialog, Ci.nsITimerCallback])
+    QueryInterface : ChromeUtils.generateQI([Ci.nsIHelperAppLauncherDialog, Ci.nsITimerCallback])
 };
 
 this.NSGetFactory = XPCOMUtils.generateNSGetFactory([unknownContentTypeDialog]);

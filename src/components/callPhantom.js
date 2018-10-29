@@ -21,7 +21,7 @@ callPhantomAPI.prototype = {
 
     classID: Components.ID("{4e2fc2ea-f8b9-456b-a421-71039eb8dcd0}"),
 
-    QueryInterface: XPCOMUtils.generateQI(
+    QueryInterface: ChromeUtils.generateQI(
                                           [Ci.nsIDOMGlobalPropertyInitializer,
                                            Ci.nsISupports]
                                           ),

@@ -11,7 +11,7 @@ function DisabledTelemetryStartup() {}
 
 DisabledTelemetryStartup.prototype = {
     classID: Components.ID('{b0836913-f33f-4935-96af-235891cd5815}'),
-    QueryInterface: XPCOMUtils.generateQI([Ci.nsIObserver, Ci.nsITimerCallback]),
+    QueryInterface: ChromeUtils.generateQI([Ci.nsIObserver, Ci.nsITimerCallback]),
     _xpcom_factory: XPCOMUtils.generateSingletonFactory(DisabledTelemetryStartup),
 
     observe(subject, topic, data) {},
