@@ -994,8 +994,7 @@ function _create(parentWebpageInfo) {
 
             let win = browser.ownerDocument.defaultView.top;
 
-            let domWindowUtils = win.QueryInterface(Ci.nsIInterfaceRequestor)
-                                    .getInterface(Ci.nsIDOMWindowUtils);
+            let domWindowUtils = win.windowUtils;
             if ('setCSSViewport' in domWindowUtils) {
                 domWindowUtils. setCSSViewport(w,h);
             }
@@ -1155,7 +1154,7 @@ function _create(parentWebpageInfo) {
             }
 
             privProp.staticContentLoading = true;
-            webpageUtils.setWindowContent (docShell, content, webNav.currentURI.clone());
+            webpageUtils.setWindowContent (docShell, content, webNav.currentURI);
 
             // wait until the content is loaded
             let thread = Services.tm.currentThread;
@@ -1338,9 +1337,7 @@ function _create(parentWebpageInfo) {
                 // only set focus if needed, else it can break focus (Gecko 54+) and some keys don't work in inputs
                 browser.contentWindow.focus();
             }
-            let domWindowUtils = browser.contentWindow
-                                        .QueryInterface(Ci.nsIInterfaceRequestor)
-                                        .getInterface(Ci.nsIDOMWindowUtils);
+            let domWindowUtils = browser.contentWindow.windowUtils;
             if (modifier) {
                 let  m = 0;
                 let mod = this.event.modifier;
@@ -1482,7 +1479,7 @@ function _create(parentWebpageInfo) {
             }
             browserJustCreated = false;
             browser.webNavigation.stop(3);
-            let uri = browser.currentURI.clone();
+            let uri = browser.currentURI;
             if (url) {
                 // if url given, take it
                 uri = Services.io.newURI(url, null, null);
@@ -1641,9 +1638,7 @@ function _create(parentWebpageInfo) {
             if (!browser)
                 throw new Error("WebPage not opened");
             browser.markupDocumentViewer.fullZoom = val;
-            let domWindowUtils = browser.contentWindow
-                                        .QueryInterface(Ci.nsIInterfaceRequestor)
-                                        .getInterface(Ci.nsIDOMWindowUtils);
+            let domWindowUtils = browser.contentWindow.windowUtils;
             domWindowUtils.redraw(1);
         },
 
