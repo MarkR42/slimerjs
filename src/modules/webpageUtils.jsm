@@ -265,25 +265,15 @@ var webpageUtils = {
             return null;
         }
         else {
-            // this is an HTML document, use the document encoder
-            // to retrieve the text version of the DOM
-            let encoder;
+            // Return document content as text or html
             if (onlyPlainText) {
-                encoder = Cc["@mozilla.org/layout/documentEncoder;1?type=text/plain"]
-                            .createInstance(Ci.nsIDocumentEncoder);
-                let flags =de.OutputLFLineBreak | de.OutputPersistNBSP | de.OutputBodyOnly;
-                if (!allTextContent) {
-                    flags |= de.SkipInvisibleContent | de.OutputNoScriptContent;
-                }
-                encoder.init(doc, "text/plain", flags);
+                // Use textContent on root element:
+                return doc.documentElement.textContent;
             }
             else {
-                encoder = Cc["@mozilla.org/layout/documentEncoder;1?type=text/html"]
-                            .createInstance(Ci.nsIDocumentEncoder);
-                encoder.init(doc, "text/html", de.OutputLFLineBreak | de.OutputRaw);
+                // Use XML Serializer
+                return new XMLSerializer().serializeToString(doc);
             }
-            encoder.setNode(doc);
-            return encoder.encodeToString();
         }
     },
 
